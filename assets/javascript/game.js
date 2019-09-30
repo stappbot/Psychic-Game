@@ -1,5 +1,5 @@
 let wins = 0;
-let guesses = 0;
+let guesses = 7;
 let losses = 0;
 let computerGuess;
 
@@ -8,7 +8,7 @@ const letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 
 //reset function - keep track of wins/losses, reset guesses to 0
 function reset() {
-    guesses = 0;
+    guesses = 7;
     //select random letter for the computer
     let computerGuessIndex = Math.floor(Math.random() * letters.length);
     computerGuess = letters[computerGuessIndex];
@@ -29,9 +29,9 @@ document.onkeyup = function (event) {
         wins++
         reset();
     } else {
-        guesses++
+        guesses--
 
-        if (guesses === 7) {
+        if (guesses === 0) {
             losses++
             reset()
         }
