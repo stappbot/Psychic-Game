@@ -5,14 +5,17 @@ let computerGuess;
 
 //make an array for the player and computer to guess
 const letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+//make array of user guesses
+let guessed = []
 
 //reset function - keep track of wins/losses, reset guesses to 0
 function reset() {
+    guessed = [];
     guesses = 7;
     //select random letter for the computer
     let computerGuessIndex = Math.floor(Math.random() * letters.length);
     computerGuess = letters[computerGuessIndex];
-    console.log("Computer chose: " + computerGuess);
+    console.log("Game reset, Computer chose: " + computerGuess);
 }
 
 reset();
@@ -30,15 +33,13 @@ document.onkeyup = function (event) {
         reset();
     } else {
         guesses--
-
+        guessed.push(userGuess);
         if (guesses === 0) {
             losses++
             reset()
         }
     }
-    console.log("Wins: " + wins);
-    console.log("Guesses: " + guesses);
-    console.log("Losses: " + losses);
+    console.log("Wins: " + wins, "Guesses: " + guesses, "Losses: " + losses, "Guessed letters: " + guessed);
 }
 
 // //figure out how to give the user 7 guesses and make it lose after the 7th incorrect guess (for loop and else statement)
