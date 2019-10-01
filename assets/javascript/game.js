@@ -39,6 +39,7 @@ reset();
 document.onkeyup = function (event) {
     //determines which key was pressed
     var userGuess = event.key;
+    //if/else for userGuess needing to match a-z
     //return userGuess
     console.log("user chose: " + userGuess)
 
@@ -59,4 +60,6 @@ document.onkeyup = function (event) {
     console.log("Wins: " + wins, "Guesses: " + guesses, "Losses: " + losses, "Guessed letters: " + guessed);
 }
 
-// //figure out how to give the user 7 guesses and make it lose after the 7th incorrect guess (for loop and else statement)
+//figure out how to not tally guesses against user if user has already guessed the letter before
+
+//user can only guess between a-z, otherwise gets an alert to only guess a-z; also, anything other than a-z doesn't register as a guess
