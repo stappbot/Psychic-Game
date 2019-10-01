@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Psychic Game</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="assets/javascript/game.js"></script>
 </head>
 <body>
         
@@ -19,8 +18,8 @@
         
                 <div class="container">
                     <div class="current">Current letter: ?</div>
-                    <div class="number">Remaining guesses: </div>
-                    <div class="letters">Letters already guessed: </div>
+                    <div>Remaining guesses: <span id="guesses-remain"></span></div>
+                    <div>Letters already guessed: <span id="letters-guessed"></span></div>
                 </div>
         
             </div>
@@ -28,6 +27,6 @@
 
         
     
-
+    <script src="assets/javascript/game.js"></script>
 </body>
 </html>
