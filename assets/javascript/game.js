@@ -40,11 +40,16 @@ document.onkeyup = function (event) {
     //determines which key was pressed
     var userGuess = event.key;
     //if/else for userGuess needing to match a-z
-    //return userGuess
-    console.log("user chose: " + userGuess)
+    if (!letters.includes(userGuess)) {
+        alert ("WRONG! Only guess A-Z, silly bean.")
+    }
+    else if (guessed.includes(userGuess)) {
+        alert ("WRONG! You already guessed this letter.")
+    }
+    //console.log("user chose: " + userGuess)
 
     //collect results
-    if (userGuess === computerGuess) {
+    else if (userGuess === computerGuess) {
         wins++
         //display to html page
         reset();
