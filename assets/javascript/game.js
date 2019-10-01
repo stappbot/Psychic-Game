@@ -6,6 +6,9 @@ let computerGuess;
 //$ and camel case is a convention to say you are pointing at something in html
 const $guessesRemain = document.getElementById("guesses-remain")
 const $lettersGuessed = document.getElementById("letters-guessed")
+//insert wins and losses into html
+const $wins = document.getElementById("wins")
+const $losses = document.getElementById("losses")
 
 //make an array for the player and computer to guess
 const letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
@@ -15,6 +18,8 @@ let guessed = []
 function displayResults() {
     $guessesRemain.innerText = guesses;
     $lettersGuessed.innerText = guessed;
+    $wins.innerText = wins;
+    $losses.innerText = losses;
 }
 
 //reset function - keep track of wins/losses, reset guesses to 0
